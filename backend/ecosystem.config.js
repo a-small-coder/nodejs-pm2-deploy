@@ -23,7 +23,7 @@ module.exports = {
       path: DEPLOY_PATH,
       // 'pre-deploy': `scp .env ${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_PATH}`,
       'pre-deploy': 'pwd && ls -la',
-      'post-deploy': 'source ~/.nvm/nvm.sh && npm i && npm run build',
+      'post-deploy': 'source ~/.nvm/nvm.sh && cd backend && npm i && npm run build',
     },
   },
 }; 
