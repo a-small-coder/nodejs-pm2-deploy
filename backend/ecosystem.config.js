@@ -12,12 +12,6 @@ module.exports = {
   apps: [{
     name: 'api-service',
     script: './dist/app.js',
-    env_env_production: {
-      NODE_ENV: 'production',
-      DATABASE_HOST,
-      DATABASE_USER,
-      DATABASE_PASSWORD,
-    },
   }],
 
   deploy: {
