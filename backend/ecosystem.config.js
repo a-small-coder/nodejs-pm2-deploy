@@ -21,7 +21,7 @@ module.exports = {
       ref: DEPLOY_REF,
       repo: 'git@github.com:a-small-coder/nodejs-pm2-deploy.git',
       path: DEPLOY_PATH,
-      'pre-deploy': `node -e "require('child_process').execSync('scp', ['${path.resolve(__dirname, '.env').replace(/\\/g, '/')}', '${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_PATH}'], {stdio:'inherit'})"`,
+      'pre-deploy': `scp ./*.env ${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_PATH}`,
       'post-deploy': 'npm i && npm run build',
     },
   },
