@@ -138,7 +138,7 @@ class Api {
       .then(getResponse)
   }
   }
-  const api = new Api('https://api.my-own-mesto.nomorepartiessbs.ru/');
+  const api = new Api('https://api.my-own-mesto.nomorepartiessbs.ru');
   
   export default api;
   
