@@ -21,7 +21,7 @@ module.exports = {
       ref: DEPLOY_REF,
       repo: 'git@github.com:a-small-coder/nodejs-pm2-deploy.git',
       path: DEPLOY_PATH,
-      'post-deploy': 'source ~/.nvm/nvm.sh && cd backend && npm i && npm run build',
+      'post-deploy': 'source ~/.nvm/nvm.sh && cd backend && npm i && npm run build && pm2 startOrReload ecosystem.config.js',
     },
   },
 }; 
