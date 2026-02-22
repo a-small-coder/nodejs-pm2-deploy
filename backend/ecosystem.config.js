@@ -12,6 +12,12 @@ module.exports = {
   apps: [{
     name: 'api-service',
     script: './dist/app.js',
+    env_env_production: {
+      NODE_ENV: 'production',
+      DATABASE_HOST,
+      DATABASE_USER,
+      DATABASE_PASSWORD,
+    },
   }],
 
   deploy: {
@@ -21,8 +27,7 @@ module.exports = {
       ref: DEPLOY_REF,
       repo: 'git@github.com:a-small-coder/nodejs-pm2-deploy.git',
       path: DEPLOY_PATH,
-      // 'pre-deploy': `scp .env ${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_PATH}`,
-      'pre-deploy': 'pwd && ls -la',
+      'pre-deploy': `scp .env ${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_PATH}`,
       'post-deploy': 'source ~/.nvm/nvm.sh && cd backend && npm i && npm run build',
     },
   },
